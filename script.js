@@ -2,6 +2,8 @@ const customName = document.getElementById('customname');
 const randomize = document.querySelector('.randomize');
 const story = document.querySelector('.story');
 
+customname.focus();
+
 function randomValueFromArray(array) {
     const random = Math.floor(Math.random() * array.length);
     return array[random];
@@ -28,7 +30,7 @@ function result() {
     var newStory = storyText;
     if (customName.value !== '') {
         const name = customName.value;
-        newStory = newStory.replace('Bob', name);
+        newStory = newStory.replace('Димасик', name);
     }
 
     if (document.getElementById("ru").checked) {

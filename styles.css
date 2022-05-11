@@ -1,6 +1,17 @@
 body {
+    display: grid;
+    justify-items: center;
+    background-image: url(fon.jpg);
+    background-size: cover;
+    color: white;
+    text-align: center;
+    text-shadow: 4px 4px 2px black;
     font-family: helvetica, sans-serif;
-    width: 350px;
+    width: 90%;
+    max-width: 800px;
+    min-width: 280px;
+    margin: 0 auto;
+    word-wrap: normal;
 }
 
 label {
@@ -8,7 +19,7 @@ label {
 }
 
 div {
-    padding-bottom: 20px;
+    padding-top: 20px;
 }
 
 input[type="text"] {
@@ -16,9 +27,22 @@ input[type="text"] {
     width: 150px;
 }
 
+.randomize {
+    font-size: 1rem;
+    padding: 5px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-color: rgba(0, 0, 0, 0.4);
+}
+
 .story {
-    background: #FFC125;
-    color: #5E2612;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-shadow: none;
     padding: 10px;
     visibility: hidden;
+}
+
+.randomize:hover {
+    background-color: rgba(0, 0, 0, 0.6);
 }
