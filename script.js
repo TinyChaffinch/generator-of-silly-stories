@@ -7,37 +7,43 @@ function randomValueFromArray(array) {
     return array[random];
 }
 
-var storyText = 'It was 94 fahrenheit outside, so :insertx: went for a walk. When they got to :inserty:, they stared in horror for a few moments, then :insertz:. Bob saw the whole thing, but was not surprised — :insertx: weighs 300 pounds, and it was a hot day.'
+var storyText = 'На улице было 94 градуса по Фаренгейту, когда :insertx: вышел на прогулку. Подходя к :inserty:, он остановился и :insertz:. Перед ним стоял Димасик, который после каникул стал весить 300 фунтов и его жир таял под палящим солнцем.';
 
-var insertX = ['Willy the Goblin',
+var insertX = ['Джонни',
     'Big Daddy',
-    'Father Christmas']
+    'Богдан']
 
-var insertY = ['the soup kitchen',
-    'Disneyland',
-    'the White House']
+var insertY = ['рыгаловке',
+    'бичёрочке',
+    'ПКГХ']
 
-var insertZ = ['spontaneously combusted',
-    'melted into a puddle on the sidewalk',
-    'turned into a slug and crawled away']
+var insertZ = ['закурил',
+    'покрылся холодным потом',
+    'открыл рот от удивления']
 
 randomize.addEventListener('click', result);
 
 function result() {
 
+    var newStory = storyText;
     if (customName.value !== '') {
         const name = customName.value;
+        newStory = newStory.replace('Bob', name);
     }
 
-    if (document.getElementById("uk").checked) {
-        const weight = Math.round(300);
-        const temperature = Math.round(94);
+    if (document.getElementById("ru").checked) {
+        const weight = Math.round(300*0.0714285714220916) + ' килограмм';
+        const temperature = Math.round((94-32)/1.8) + ' градуса по Цельсию';
+        newStory = newStory.replace('300 фунтов', weight);
+        newStory = newStory.replace('94 градуса по Фаренгейту', temperature);
     }
 
-    var newStory = storyText;
     var xItem = randomValueFromArray(insertX);
     var yItem = randomValueFromArray(insertY);
     var zItem = randomValueFromArray(insertZ);
-    // story.textContent = ;
+    newStory = newStory.replace(':insertx:', xItem);
+    newStory = newStory.replace(':inserty:', yItem);
+    newStory = newStory.replace(':insertz:', zItem);
+    story.textContent = newStory;
     story.style.visibility = 'visible';
 }
