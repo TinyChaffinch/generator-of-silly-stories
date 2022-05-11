@@ -34,7 +34,7 @@ function result() {
     }
 
     if (document.getElementById("ru").checked) {
-        const weight = Math.round(300*0.0714285714220916) + ' килограмм';
+        const weight = Math.round(300*0.45359237) + ' килограмм';
         const temperature = Math.round((94-32)/1.8) + ' градуса по Цельсию';
         newStory = newStory.replace('300 фунтов', weight);
         newStory = newStory.replace('94 градуса по Фаренгейту', temperature);
